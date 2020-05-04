@@ -10,21 +10,41 @@ custom_map3x3 = [
 ]
 env = gym.make("FrozenLake-v0", desc=custom_map3x3)
 # TODO: Uncomment the following line to try the default map (4x4):
-env = gym.make("FrozenLake-v0")
+#env = gym.make("FrozenLake-v0")
 
 # Uncomment the following lines for even larger maps:
-#random_map = generate_random_map(size=5, p=0.8)
-#env = gym.make("FrozenLake-v0", desc=random_map)
+# random_map = generate_random_map(size=5, p=0.8)
+# env = gym.make("FrozenLake-v0", desc=random_map)
 
 # Init some useful variables:
 n_states = env.observation_space.n
 n_actions = env.action_space.n
 
+print("States: ", n_states)
+print("Actions: ", n_actions)
 # the r vector is zero everywhere except for the goal state (last state)
 r = np.zeros(n_states)
 r[-1] = 1.
 
 gamma = 0.8
+
+
+# left = 0; right =2 ; up=1; down=4
+steps = [[]]
+
+''' Helper function to generate list of all possible moves (modulo 4 counter) '''
+
+
+def moduloCount(n, base):
+
+    digits = "0123"  # 4 possible moves
+
+    if n < base:
+        x = digits[n]
+    else:
+        x = moduloCount(n//base, base) + digits[n % base]
+
+    return x
 
 
 """ This is a helper function that returns the transition probability matrix P for a policy """
@@ -61,12 +81,34 @@ def value_policy(policy):
 
 
 def bruteforce_policies():
-    terms = terminals()
+    #terms = terminals()
     optimalpolicies = []
-
-    # in the discrete case a policy is just an array with action = policy[state]
     policy = np.zeros(n_states, dtype=np.int)
     optimalvalue = np.zeros(n_states)
+    policyList = []
+    valueList = []  # Store values of all policies
+    # Total combinations of states = 4^10 (n_actions ^ n_states)
+    for i in range(n_actions ** n_states):
+        if(i % 1000 == 0):
+            print("State_idx: ", i)
+
+        x = moduloCount(i, n_actions)
+        L = len(x)
+        policy = list('0'*(10-L)+x)
+        policy = [int(i) for i in policy]
+        policyList.append(policy)
+        valueList.append(value_policy(policy))
+
+    optimalvalue = np.amax(valueList, axis=0)
+    equalityMatrix = (valueList == optimalvalue)
+    idx = 0
+    for row in equalityMatrix:
+        if(all(row)):  # Check if values of all states are maximum
+            optimalpolicies.append(policyList[idx])
+        idx += 1
+
+    #print(str(i)+"---  "+policy)
+    # in the discrete case a policy is just an array with action = policy[state]
 
     # TODO: implement code that tries all possible policies, calculate the values using def value_policy.
     # Find the optimal values and the optimal policies to answer the exercise questions.
@@ -91,25 +133,25 @@ def main():
     policy_right = np.ones(n_states, dtype=np.int) * 2  # 2 for all states
 
     # Value functions:
-    print("Value function for policy_left (always going left):")
-    print(value_policy(policy_left))
-    print("Value function for policy_right (always going right):")
-    print(value_policy(policy_right))
+    # print("Value function for policy_left (always going left):")
+    # print(value_policy(policy_left))
+    # print("Value function for policy_right (always going right):")
+    # print(value_policy(policy_right))
 
-    # optimalpolicies = bruteforce_policies()
-    optimalpolicies = policy_right
+    optimalpolicies = bruteforce_policies()
+    # $ optimalpolicies = policy_right
     # This code can be used to "rollout" a policy in the environment:
 
-    print("rollout policy:")
-    maxiter = 100
-    state = env.reset()
-    for i in range(maxiter):
-        new_state, reward, done, info = env.step(optimalpolicies[0][state])
-        env.render()
-        state = new_state
-        if done:
-            print("Finished episode")
-            break
+    # print("rollout policy:")
+    # maxiter = 100
+    # state = env.reset()
+    # for i in range(maxiter):
+    #     new_state, reward, done, info = env.step(optimalpolicies[0][state])
+    #     env.render()
+    #     state = new_state
+    #     if done:
+    #         print("Finished episode")
+    #         break
 
 
 if __name__ == "__main__":
