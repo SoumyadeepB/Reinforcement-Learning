@@ -10,3 +10,7 @@ A Collection of Reinforcement Learning Algorithms implemented in Python:
 - Q-Learning
 
 (To be updated...)
+
+## Requirements
+- Python 3.x
+- OpenAI Gym
