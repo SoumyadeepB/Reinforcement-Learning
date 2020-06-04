@@ -12,6 +12,6 @@ A Collection of Reinforcement Learning Algorithms implemented in Python:
 (To be updated...)
 
 ## Requirements
-- Python 3.x
-- OpenAI Gym 
-  -`pip install gym`
+* Python 3.x
+* OpenAI Gym 
+   * `pip install gym`
