@@ -7,6 +7,6 @@ A Collection of Reinforcement Learning Algorithms implemented in Python:
 - Frozen Lake (Policy Iteration)
 - Monte-Carlo method on the Blackjack game (First-visit and Exploring Starts)
 - Sarsa
-- 
+- Q-Learning
 
 (To be updated...)
