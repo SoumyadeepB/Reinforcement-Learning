@@ -14,4 +14,4 @@
 
   - [Bandits and Exploration / Exploitation]()
   
-  - [Optimal Policies with Dynamic Programming]()
+  - [Optimal Policies with Dynamic Programming](https://github.com/SoumyadeepB/Reinforcement-Learning/blob/master/Coursera%20-%20Fundamentals%20of%20RL/Assignment2-Optimal%20Policies%20with%20Dynamic%20Programming.ipynb)
