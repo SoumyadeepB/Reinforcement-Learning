@@ -12,6 +12,6 @@
 
 - Course 1: Fundamentals of Reinforcement Learning
 
-  - [Bandits and Exploration / Exploitation]()
+  - [Bandits and Exploration / Exploitation](Coursera - Fundamentals of RL/Assignment1-Bandits.ipynb)
   
   - [Optimal Policies with Dynamic Programming](https://github.com/SoumyadeepB/Reinforcement-Learning/blob/master/Coursera%20-%20Fundamentals%20of%20RL/Assignment2-Optimal%20Policies%20with%20Dynamic%20Programming.ipynb)
