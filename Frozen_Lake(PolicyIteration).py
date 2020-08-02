@@ -4,10 +4,10 @@ import numpy as np
 
 # Init environment
 env = gym.make("FrozenLake-v0")
-# you can set it to deterministic with:
+# Can be set to deterministic with:
 # env = gym.make("FrozenLake-v0", is_slippery=False)
 
-# If you want to try larger maps you can do this using:
+# Larger maps ->
 # random_map = generate_random_map(size=5, p=0.8)
 # env = gym.make("FrozenLake-v0", desc=random_map)
 
@@ -23,8 +23,9 @@ def value_iteration():
     theta = 1e-8
     gamma = 0.8
     idx = 0
+    
     # TODO: implement the value iteration algorithm and return the policy
-    # Hint: env.P[state][action] gives you tuples (p, n_state, r, is_terminal), which tell you the probability p that you end up in the next state n_state and receive reward r
+    # env.P[state][action] gives you tuples (p, n_state, r, is_terminal), which tell you the probability p that you end up in the next state n_state and receive reward r
     while True:
         print("Iteration:" + str(idx))
         idx += 1  # increment iterations
