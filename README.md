@@ -20,7 +20,12 @@ same state. At the goal the agent will receive +1 reward, elsewhere it receives 
      - Exploit the overlapping nature of the subproblems
 
 - **Frozen Lake (Policy Iteration)**
+
 - **Monte-Carlo method on the Blackjack game (First-visit and Exploring Starts)**
+  - Approach: Monte-Carlo Learning
+     - Exploring Starts: Estimate the Q-Value function by randomly starting at any state, then choose the best (greedy) action.
+     - First-visit MC: Increment total return by only considering the first time-step 't' that state 's' is visited in an episode.
+
 - **Sarsa**
 - **Q-Learning**
 
