@@ -14,7 +14,7 @@ down it could also end up left or right). When the action would bump the agent i
 same state. At the goal the agent will receive +1 reward, elsewhere it receives 0 reward. An episode terminates when the agent ends up at the goal or in a hole. 
     - Brute-Force Approach: Iterate over all possible policies and compute v_pi. Find optimal value function v* and thus compute the optimal policy.
 
-- **Frozen Lake (Dynamic Programming) **
+- **Frozen Lake (Dynamic Programming)**
   - Approach: Dynamic programming to implement a recursive decomposition of the Bellman Equation
      - Achieve optimal substructure
      - Exploit the overlapping nature of the subproblems
