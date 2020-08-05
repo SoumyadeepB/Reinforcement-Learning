@@ -77,7 +77,7 @@ Identify when to use a distribution model or sample model
 Describe the advantages and disadvantages of sample models and distribution models  
 Explain why sample models can be represented more compactly than distribution models  
 
-*Lesson 2: Planning *  
+*Lesson 2: Planning*    
 
 Explain how planning is used to improve policies  
 Describe random-sample one-step tabular Q-planning    
