@@ -1,4 +1,4 @@
-# Sample Based Learning Methods: Learning Objectives
+# Sample Based Learning Methods: Learning Objectives 
 
 - **Module 01: Monte Carlo Methods for Prediction & Control**  
 
