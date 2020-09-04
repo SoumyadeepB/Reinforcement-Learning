@@ -1,4 +1,4 @@
-## Reinforcement Learning
+# || Reinforcement Learning  ||
 
 A Collection of Reinforcement Learning Algorithms implemented in Python:
 
@@ -31,7 +31,7 @@ same state. At the goal the agent will receive +1 reward, elsewhere it receives 
 
 (To be updated...)
 
-### Requirements
+## Requirements
 * Python 3.x
 * OpenAI Gym 
    * `pip install gym`
