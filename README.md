@@ -1,4 +1,4 @@
-# Reinforcement Learning
+## Reinforcement Learning
 
 A Collection of Reinforcement Learning Algorithms implemented in Python:
 
