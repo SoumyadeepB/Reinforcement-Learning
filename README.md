@@ -26,7 +26,7 @@ same state. At the goal the agent will receive +1 reward, elsewhere it receives 
      - Exploring Starts: Estimate the Q-Value function by randomly starting at any state, then choose the best (greedy) action.
      - First-visit MC: Increment total return by only considering the first time-step 't' that state 's' is visited in an episode.
 
-- **Sarsa**
+- **Sarsa** 
 - **Q-Learning**
 
 (To be updated...)
