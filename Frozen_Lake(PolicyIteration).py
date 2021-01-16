@@ -2,7 +2,7 @@ import gym
 from gym.envs.toy_text.frozen_lake import generate_random_map
 import numpy as np
 
-# Init environment
+# Init environment 
 env = gym.make("FrozenLake-v0")
 # Can be set to deterministic with:
 # env = gym.make("FrozenLake-v0", is_slippery=False)
