@@ -19,7 +19,7 @@ same state. At the goal the agent will receive +1 reward, elsewhere it receives 
      - Achieve optimal substructure
      - Exploit the overlapping nature of the subproblems
 
-- **Frozen Lake (Policy Iteration)**
+- **Frozen Lake (Policy Iteration)** 
 
 - **Monte-Carlo method on the Blackjack game (First-visit and Exploring Starts)**
   - Approach: Monte-Carlo Learning
